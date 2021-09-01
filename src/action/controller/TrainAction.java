@@ -118,6 +118,40 @@ public class TrainAction {
         }
         
     }
+
+    public void updateData(){
+        HttpServletResponse response = ServletActionContext.getResponse();
+        HttpServletRequest request = ServletActionContext.getRequest();
+
+        String email = request.getParameter("email");
+        String userName = request.getParameter("userName");
+        String address = request.getParameter("address");
+        String password = request.getParameter("password");
+
+        System.out.println(email+" "+address);
+        Registration registration = new Registration(email, userName, address, password);
+        try {
+            boolean update = registrationDao.update(registration);
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            String s=null;
+
+        if (update){
+            s = new Gson().toJson("success");
+            response.getWriter().write(s);
+        }else{
+            s = new Gson().toJson("fail");
+            response.getWriter().write(s);
+        }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
     public Registration getRegistration() {
         return registration;
     }

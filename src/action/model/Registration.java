@@ -1,17 +1,17 @@
 package action.model;
 
 public class Registration {
-    private String userName;
     private String email;
+    private String userName;
     private String address;
     private String password;
 
     public Registration() {
     }
 
-    public Registration(String userName, String email, String address, String password) {
-        this.userName = userName;
+    public Registration( String email,String userName, String address, String password) {
         this.email = email;
+        this.userName = userName;
         this.address = address;
         this.password = password;
     }

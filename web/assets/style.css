@@ -74,44 +74,18 @@ a{
     color: #06D85F;
 }
 .popup .content {
-    max-height: 70%;
-    min-height: 50%;
-    overflow: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-}
-.popup3 .content-role {
     max-height: 40%;
-    min-height: 40%;
+    min-height: 35%;
     overflow: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
-.popup4 .content-new-role {
-    max-height: 10%;
-    min-height: 10%;
-    overflow: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-}
-.popup .content-page {
-    max-height: 50%;
-    min-height: 45%;
-    overflow: auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-}
+
 .popup .content-2 {
-    max-height: 15%;
-    min-height: 15%;
+    max-height: 10%;
+    min-height: 8%;
     overflow: auto;
     display: flex;
     justify-content: space-between;
@@ -128,3 +102,25 @@ a{
 }
 
 
+.btnSignin {
+    background-image: linear-gradient( 105.5deg, rgb(224, 162, 99) 11%, rgb(220, 144, 68) 74.9% );
+    width: 10em;
+    height: 2.5em;
+    border-radius: 25px;
+    border: none;
+    outline: 0;
+    color: white;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-family: 'Inconsolata', monospace;
+    transition: 5s;
+}
+.btnSignin:focus {
+    outline: 0;
+    background-color: #343a40;
+    transition: 2s;
+}
+.btnSignin:hover {
+    background-image: linear-gradient( 105.5deg, rgb(220, 144, 68) 11%, rgb(224, 162, 99) 74.9% );
+}

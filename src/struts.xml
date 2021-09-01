@@ -17,6 +17,9 @@
     <action name="loadData" class="action.controller.TrainAction" method="loadData">
         <result name="success">/success.jsp</result>
     </action>
+    <action name="updateData" class="action.controller.TrainAction" method="updateData">
+        <result name="success">/success.jsp</result>
+    </action>
 </package>
 
 </struts>

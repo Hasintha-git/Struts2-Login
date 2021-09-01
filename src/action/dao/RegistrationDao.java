@@ -36,4 +36,10 @@ public class RegistrationDao {
         }
         return load;
     }
+
+    public boolean update(Registration r) throws SQLException, ClassNotFoundException {
+        String sql="UPDATE Registration SET userName=?,address=?,password=?  WHERE email=?";
+        boolean b = CrudUtil.executeUpdate(sql, r.getUserName(), r.getAddress(),r.getPassword(), r.getEmail());
+        return b;
+    }
 }

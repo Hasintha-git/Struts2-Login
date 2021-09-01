@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="struts2-login">
+    <output-path>$PROJECT_DIR$/out/artifacts/struts2_login</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="struts2-login/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="struts2-login" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib1" />
+          <element id="library" level="project" name="gson-2.8.7" />
+          <element id="library" level="project" name="mysql-connector-java-8.0.20" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

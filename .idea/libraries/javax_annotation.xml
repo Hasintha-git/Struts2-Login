@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="javax.annotation">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../epic/Struts2Epiclogin/lib/javax.annotation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../epic/Struts2Epiclogin/lib/javax.ejb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../epic/Struts2Epiclogin/lib/javax.jms.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../epic/Struts2Epiclogin/lib/javax.persistence.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../epic/Struts2Epiclogin/lib/javax.resource.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../epic/Struts2Epiclogin/lib/javax.servlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../epic/Struts2Epiclogin/lib/javax.servlet.jsp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../epic/Struts2Epiclogin/lib/javax.servlet.jsp.jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../epic/Struts2Epiclogin/lib/javax.transaction.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
