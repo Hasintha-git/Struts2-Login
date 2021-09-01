@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE struts PUBLIC
+                "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+                "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.multipart.maxSize" value="6000000000" />
+
+<package name="action" namespace="/" extends="struts-default">
+    <action name="postReq" class="action.controller.TrainAction" method="execute">
+        <result name="success">/signin.jsp</result>
+        <result name="fail">/signup.jsp</result>
+    </action>
+    <action name="getReq" class="action.controller.TrainAction" method="getData">
+        <result name="success">/success.jsp</result>
+        <result name="fail">/error.jsp</result>
+    </action>
+    <action name="loadData" class="action.controller.TrainAction" method="loadData">
+        <result name="success">/success.jsp</result>
+    </action>
+</package>
+
+</struts>
