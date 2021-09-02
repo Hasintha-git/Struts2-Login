@@ -20,6 +20,15 @@
     <action name="updateData" class="action.controller.TrainAction" method="updateData">
         <result name="success">/success.jsp</result>
     </action>
+    <action name="deleteData" class="action.controller.TrainAction" method="deleteData">
+        <result name="success">/success.jsp</result>
+    </action>
+    <action name="searchData" class="action.controller.TrainAction" method="searchData">
+        <result name="success">/success.jsp</result>
+    </action>
+    <action name="confirmPassword" class="action.controller.TrainAction" method="confirmData">
+        <result name="success">/success.jsp</result>
+    </action>
 </package>
 
 </struts>

@@ -100,8 +100,12 @@ public class TrainAction {
         String s = null;
         HttpServletResponse response = ServletActionContext.getResponse();
         HttpServletRequest request = ServletActionContext.getRequest();
+
+        String countTo = request.getParameter("countTo");
+        String countFrom = request.getParameter("countFrom");
+
         try {
-            ArrayList<Registration> registrations = registrationDao.loadData();
+            ArrayList<Registration> registrations = registrationDao.loadData(countTo,countFrom);
              s = new Gson().toJson(registrations);
             System.out.println(s);
         } catch (SQLException throwables) {
@@ -151,6 +155,75 @@ public class TrainAction {
             e.printStackTrace();
         }
 
+    }
+
+    public void deleteData(){
+        HttpServletResponse response = ServletActionContext.getResponse();
+        HttpServletRequest request = ServletActionContext.getRequest();
+
+        String email = request.getParameter("email");
+        try {
+            boolean delete = registrationDao.delete(email);
+            String s=null;
+            if (delete){
+                s = new Gson().toJson("success");
+                response.getWriter().write(s);
+            }else{
+                s = new Gson().toJson("fail");
+                response.getWriter().write(s);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void searchData(){
+        HttpServletResponse response = ServletActionContext.getResponse();
+        HttpServletRequest request = ServletActionContext.getRequest();
+
+        String email = request.getParameter("email");
+        try {
+            ArrayList<Registration> search = registrationDao.search(email);
+            String data = new Gson().toJson(search);
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(data);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void confirmData(){
+        HttpServletResponse response = ServletActionContext.getResponse();
+        HttpServletRequest request = ServletActionContext.getRequest();
+
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+
+        try {
+            boolean b = registrationDao.confirmPassword(email, password);
+            String s=null;
+            if (b){
+                s = new Gson().toJson("success");
+                response.getWriter().write(s);
+            }else{
+                s = new Gson().toJson("fail");
+                response.getWriter().write(s);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(email+" "+password);
     }
     public Registration getRegistration() {
         return registration;
